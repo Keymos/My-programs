@@ -1,0 +1,2 @@
+For starters, I aim to make a minimum viable product:
+Being able to imput a goal and set a reminder (date + time) that will send me and email (temporary solution), will work later on alternative solution for notification.
