@@ -1,5 +1,8 @@
 # save this as app.py
+# Understanding how to build a web app
+
 from flask import Flask, render_template, url_for
+
 
 app = Flask(__name__)
 
