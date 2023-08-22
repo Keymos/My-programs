@@ -1,0 +1,81 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the navigation bar */
+.nav-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Style the container for the wings */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wings to wrap to the next line */
+    margin-top: 20px; /* Add margin to push the wings content down */
+}
+
+/* Style the individual wings */
+.left-wing {
+    background-color: #ff9999; /* Light Red */
+}
+
+.central-wing {
+    background-color: #99ccff; /* Light Blue */
+    width: 50%;
+}
+
+.right-wing {
+    background-color: #99ff99; /* Light Green */
+}
+
+/* Style the sub-div within each wing */
+.sub-div {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.left-wing .sub-div {
+    background-color: #ffe6e6; /* Light Pink */
+}
+
+.central-wing .sub-div {
+    background-color: #e6f7ff; /* Light Sky Blue */
+}
+
+.right-wing .sub-div {
+    background-color: #e6ffe6; /* Light Mint */
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .wing {
+        width: 100%;
+    }
+}
