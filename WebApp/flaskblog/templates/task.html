@@ -6,7 +6,11 @@
 	</div>
 	<p class="d-block bg-secondary">Description</p>
 	<div class="d-block">
-		<p class="d-inline">tag</p>
+		<p class="d-inline">{{ todo.id }}</p>
 		<h6 class="d-inline" style="float: right;">Skill</h6>
 	</div>
+    <form id="delete-form-{{ todo.id }}" method="post" action="{{ url_for('delete_task', task_id=todo.id) }}">
+        <input type="hidden" name="task_id" value="{{ todo.id }}">
+        <button type="button" class="btn btn-danger" onclick="confirmDelete({{ todo.id }})">Delete</button>
+    </form>
 </div>

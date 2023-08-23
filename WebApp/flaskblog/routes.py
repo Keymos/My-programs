@@ -20,6 +20,13 @@ def add_task():
     db.session.commit()
     return redirect(url_for("home"))
 
+@app.route('/delete_task/<int:task_id>', methods=['POST'])
+def delete_task(task_id):
+    task_to_delete = Task.query.get_or_404(task_id)
+    db.session.delete(task_to_delete)
+    db.session.commit()
+    flash('Task has been deleted!', 'success')
+    return redirect(url_for('home'))
 
 
 
