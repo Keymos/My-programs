@@ -3,7 +3,7 @@
     
     <hr>
 
-    <form class="ui form" action="/add_task" method="post">
+    <form class="ui form" action="/add_task" method="post" onkeydown="return event.key != 'Enter';">
         <div class="container">
             
             <div class="input-group ">    
@@ -21,7 +21,7 @@
         -->
                 <div class="form-row">
                     
-                        <input class="col-1" type="text" name="date_due_day", placeholder="DD">
+                    <input class="col-1" type="text" name="date_due_day", placeholder="DD">
                     <input class="col-1" type="text" name="date_due_month", placeholder="MM">
                     <input class="col-1" type="text" name="date_due_year", placeholder="YY">
                     <input class="col-1" type="text" name="date_due_hours", placeholder="hh">
@@ -43,11 +43,23 @@
     </form>
     
     <hr>
+    <!-- Part dedicated to tasks not done -->
+
 
     {% for todo in todo_list %}
-        
-        {% include 'task.html '%}
-
+        {% if todo.isDone == False %}
+            {% include 'tasks_not_done.html '%}
+        {% endif %}
     {% endfor %}
+
+    <hr>
+
+    <!-- List of done tasks -->
+
+    {% for todo in todo_list %}
+        {% if todo.isDone == True %}
+            {% include 'tasks_done.html '%}
+        {% endif %}
+    {% endfor %}    
 
 </div>

@@ -1,10 +1,12 @@
 <div class="container-fluid bg-primary-subtle">
 	<div class="d-flex">
-		<input type="checkbox" name="Check" class=""></input>
-		<h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
+        <input type="checkbox" id="checkbox-{{ todo.id }}" class="task-checkbox"
+               {% if todo.isDone %} checked {% endif %}>
+        </a>		
+        <h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
 		<p class="" style="float: right;">DD/MM hh:mm</p>
 	</div>
-	<p class="d-block bg-secondary">Description</p>
+	<p class="d-block bg-secondary">{{ todo.description }}</p>
 	<div class="d-block">
 		<p class="d-inline">{{ todo.id }}</p>
 		<h6 class="d-inline" style="float: right;">Skill</h6>

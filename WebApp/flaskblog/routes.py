@@ -1,4 +1,4 @@
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, jsonify
 from flaskblog import app, db
 from flaskblog.models import Task
 from flaskblog.forms import RegistrationForm, LoginForm
@@ -15,7 +15,8 @@ def home():
 @app.route('/add_task', methods=['POST'])
 def add_task():
     title = request.form.get("title")
-    new_task = Task(title=title)
+    description = request.form.get("description")
+    new_task = Task(title=title, description=description)
     db.session.add(new_task)
     db.session.commit()
     return redirect(url_for("home"))
@@ -27,6 +28,17 @@ def delete_task(task_id):
     db.session.commit()
     flash('Task has been deleted!', 'success')
     return redirect(url_for('home'))
+
+@app.route('/toggle_task_status/<int:task_id>', methods=['POST'])
+def toggle_task_status(task_id):
+    task = Task.query.get_or_404(task_id)
+    data = request.json  # Retrieve the data sent in the JSON request
+    
+    if data and 'isDone' in data:
+        task.isDone = data['isDone']
+        db.session.commit()
+    
+    return jsonify(success=True)
 
 
 

@@ -1,0 +1,17 @@
+<div class="container-fluid bg-secondary-subtle">
+	<div class="d-flex">
+		<input type="checkbox" id="checkbox-{{ todo.id }}" class="task-checkbox"
+               {% if todo.isDone %} checked {% endif %}>
+		<h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
+		<p class="" style="float: right;">DD/MM hh:mm</p>
+	</div>
+	<p class="d-block bg-secondary">{{ todo.description }}</p>
+	<div class="d-block">
+		<p class="d-inline">{{ todo.id }}</p>
+		<h6 class="d-inline" style="float: right;">Skill</h6>
+	</div>
+	<form id="delete-form-{{ todo.id }}" method="post" action="{{ url_for('delete_task', task_id=todo.id) }}">
+        <input type="hidden" name="task_id" value="{{ todo.id }}">
+        <button type="button" class="btn btn-danger" onclick="confirmDelete({{ todo.id }})">Delete</button>
+    </form>
+</div>
