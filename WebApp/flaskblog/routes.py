@@ -2,6 +2,7 @@ from flask import render_template, url_for, flash, redirect, request, jsonify
 from flaskblog import app, db
 from flaskblog.models import Task
 from flaskblog.forms import RegistrationForm, LoginForm
+from datetime import datetime
 
 #@app.errorhandler(404)
 
@@ -16,7 +17,16 @@ def home():
 def add_task():
     title = request.form.get("title")
     description = request.form.get("description")
-    new_task = Task(title=title, description=description)
+    date_due_date = request.form.get("date_due_date")
+    date_due_time = request.form.get("date_due_time")
+    
+    # Convert date_due_date and date_due_time to a single datetime object if provided
+    date_due = None
+    if date_due_date and date_due_time:
+        date_due_str = f"{date_due_date} {date_due_time}"
+        date_due = datetime.strptime(date_due_str, "%d/%m/%y %H:%M")
+    
+    new_task = Task(title=title, description=description, date_due=date_due)
     db.session.add(new_task)
     db.session.commit()
     return redirect(url_for("home"))
