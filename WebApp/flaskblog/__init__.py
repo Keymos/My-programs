@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 db.create_all()
 
-from flaskblog import models
+from flaskblog import routes, models
 
 @app.route('/')
 def index():

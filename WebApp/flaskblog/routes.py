@@ -1,20 +1,23 @@
-from flask import render_template, url_for, flash, redirect
-#from flaskblog import app
-#from flaskblog.forms import RegistrationForm, LoginForm
+from flask import render_template, url_for, flash, redirect, request
+from flaskblog import app, db
+from flaskblog.models import Task
+from flaskblog.forms import RegistrationForm, LoginForm
+
+#@app.errorhandler(404)
 
 @app.route('/')
 @app.route('/home')
 def home():
-    todo_list = db.session.query(Todo).all()
+    todo_list = db.session.query(Task).all()
     return render_template("General.html", todo_list=todo_list)
 
 
-@app.route("/add_task", methods=["POST"])
-def add():
+@app.route('/add_task', methods=['POST'])
+def add_task():
     title = request.form.get("title")
     new_task = Task(title=title)
     db.session.add(new_task)
-    db.session.commit
+    db.session.commit()
     return redirect(url_for("home"))
 
 
