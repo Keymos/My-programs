@@ -8,9 +8,9 @@ The main thing is the versatility and the ability for me personally to gather my
 ## Planned
 **Tasks:**
 what it should contain:
--~~id~~
+- ~~id~~
 - mother task (if needed)
--~~title~~
+- ~~title~~
   - add validation for title
 - ~~description~~
   - include duration
