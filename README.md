@@ -21,4 +21,4 @@ what it should contain:
 - skills
 - tags = categories (?)
 - sub-tasks
-- status (done/no)
+- ~~status (done/no)~~
