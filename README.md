@@ -8,10 +8,10 @@ The main thing is the versatility and the ability for me personally to gather my
 ## Planned
 **Tasks:**
 what it should contain:
-- id
+~~- id~~
 - mother task (if needed)
-- title
-- description
+~~- title~~
+~~- description~~
   - include duration
 - Repeat (y/n) → on _[days]_ or _x_ times every _y_ * _u_ (units [days, weeks, months])
 - start time
