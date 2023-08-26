@@ -19,24 +19,15 @@ what it should contain:
   - ~~description~~
   - due time
     - ~~add the attribute~~ 
-<<<<<<< HEAD
-<<<<<<< HEAD
     - ~~If both date and time are empty, they both don't register~~
     - ~~If only time is filled, then check if it is still not too late today, if yes, add today's date automatically~~
     - ~~If only date is filled, then the time is automatically set to 00:00~~
     - so that you can't make todo.date_due.time() == time(0, 0) → validation 
     - ~~status (done/no)~~
-=======
-=======
->>>>>>> parent of 0f4bc15 (Update README.md)
     - add:
       - If both date and time are empty, they both don't register
       - If only time is filled, then check if it is still not too late today, if yes, add today's date automatically
       - If only date is filled, then the time is automatically set to 00:00
-<<<<<<< HEAD
->>>>>>> parent of 0f4bc15 (Update README.md)
-=======
->>>>>>> parent of 0f4bc15 (Update README.md)
   - reminder
     - add the reminder attribute
       - yes / no (reminder), checkbox
@@ -54,8 +45,6 @@ what it should contain:
     - tags = categories ( might not need?)
 
 - Make is so that when clicking on a title, a page open up to edit the task
-<<<<<<< HEAD
-<<<<<<< HEAD
 - Something like a drop down menu, where only like the last 10 tasks done show.
 
   **Skills**
