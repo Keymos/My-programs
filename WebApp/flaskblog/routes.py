@@ -23,6 +23,7 @@ def home():
     time_0 = datetime.combine(datetime.today(),time(0, 0))
     return render_template("General.html", todo_list=todo_list, now=now, time_0=time_0)
 
+
 @app.route('/add_task', methods=['POST'])
 def add_task():
     title = request.form.get("title")

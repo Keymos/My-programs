@@ -1,14 +1,14 @@
 function confirmDelete(taskId) {
-            var confirmMessage = "Are you sure you want to delete this task?";
-            if (confirm(confirmMessage)) {
-                // If user confirms, submit the form
-                var form = document.querySelector('#delete-form-' + taskId);
-                form.submit();
-            }
-        }
-
+    var confirmMessage = "Are you sure you want to delete this task?";
+    if (confirm(confirmMessage)) {
+        // If user confirms, submit the form
+        var form = document.querySelector('#delete-form-' + taskId);
+        form.submit();
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
+    // make the checked / uncheck update the Task.isDone accordingly on refresh
     var checkboxes = document.querySelectorAll(".task-checkbox");
 
     checkboxes.forEach(function (checkbox) {
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Send the HTTP request with the JSON data
     xhr.send(data);
     }
-
 });
     
 
