@@ -1,14 +1,14 @@
 function confirmDelete(taskId) {
-    var confirmMessage = "Are you sure you want to delete this task?";
-    if (confirm(confirmMessage)) {
-        // If user confirms, submit the form
-        var form = document.querySelector('#delete-form-' + taskId);
-        form.submit();
-    }
-}
+            var confirmMessage = "Are you sure you want to delete this task?";
+            if (confirm(confirmMessage)) {
+                // If user confirms, submit the form
+                var form = document.querySelector('#delete-form-' + taskId);
+                form.submit();
+            }
+        }
+
 
 document.addEventListener("DOMContentLoaded", function () {
-    // make the checked / uncheck update the Task.isDone accordingly on refresh
     var checkboxes = document.querySelectorAll(".task-checkbox");
 
     checkboxes.forEach(function (checkbox) {
@@ -20,22 +20,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Function to update the status of a task (mark as done or not done)
     function updateTaskStatus(taskId, isDone) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/toggle_task_status/" + taskId, true);
-        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhr.onload = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var taskElement = document.querySelector("#checkbox-" + taskId);
-                if (taskElement) {
-                    taskElement.checked = isDone;
-                }
+    // Create a new XMLHttpRequest object to make an HTTP request
+    var xhr = new XMLHttpRequest();
+    
+    // Specify the HTTP method (POST) and the URL for the request
+    xhr.open("POST", "/toggle_task_status/" + taskId, true);
+    
+    // Set the Content-Type header to specify that we're sending JSON data
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    
+    // Define a function to run when the HTTP request is complete (onload)
+    xhr.onload = function () {
+        // Check if the request is complete and the response status is 200 (OK)
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Find the HTML element (checkbox) for the task by its ID
+            var taskElement = document.querySelector("#checkbox-" + taskId);
+            
+            // If the task element exists in the HTML
+            if (taskElement) {
+                // Update the checked attribute of the checkbox based on isDone
+                taskElement.checked = isDone;
             }
-        };
-        var data = JSON.stringify({ isDone: isDone });
-        xhr.send(data);
+        }
+    };
+    
+    // Create a JSON string containing the data to send in the request
+    var data = JSON.stringify({ isDone: isDone });
+    
+    // Send the HTTP request with the JSON data
+    xhr.send(data);
     }
+
 });
+    
 
 // Preload the current time in the task adding part
 document.addEventListener("DOMContentLoaded", function () {

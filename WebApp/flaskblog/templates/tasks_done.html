@@ -2,10 +2,20 @@
 	<div class="d-flex">
 		<input type="checkbox" id="checkbox-{{ todo.id }}" class="task-checkbox"
                {% if todo.isDone %} checked {% endif %}>
+
         <h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
         {% if todo.date_due %}
-            <p class="" style="float: right;">{{ todo.date_due.strftime('%d/%m %H:%M') }}</p>
+        	<p class="d-inline">was due: {{ todo.date_due.strftime('%d/%m %H:%M') }}</p>
         {% endif %}
+		<h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
+		<p class="" style="float: right;">DD/MM hh:mm</p>
+
+		<h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
+		<p class="" style="float: right;">DD/MM hh:mm</p>
+
+		<h5 class="" style="flex-grow: 1;">{{ todo.title }}</h5>
+		<p class="" style="float: right;">DD/MM hh:mm</p>
+
 	</div>
 	<p class="d-block bg-secondary">{{ todo.description }}</p>
 	<div class="d-block">
