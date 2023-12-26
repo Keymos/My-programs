@@ -1,0 +1,7 @@
+Levels,Beginner,Novice,Intermediate,Advanced,Elite
+5K Running,31:29,26:19,22:31,19:44,17:40
+10K Running,01:05:30,54:39,46:43,40:54,36:38
+Bench Press,107.5,120,132.5,152.5,175
+Squat,157.5,190,210,222.5,257.5
+Deadlift,162.5,177.5,202.5,230,262.5
+Big Three,427.5,487.5,547.5,607.5,697.5
