@@ -5,12 +5,12 @@
 
 ## Planned
 - The interface should look something like:
-Habits  1) Studying     [      ] hours
-        2) Working      [      ] hours
-        3) Working out  [V OR -]
-        4) Sleeping     [      ] hours
-        5) Eating       [      ] 
-        [Add Button] [Remove Button] [Submit Button]
+- Habits  1) Studying     [      ] hours
+-         2) Working      [      ] hours
+-         3) Working out  [V OR -]
+-         4) Sleeping     [      ] hours
+-         5) Eating       [      ] 
+-         [Add Button] [Remove Button] [Submit Button]
 - then a graph that updates on page refresh to the right of it.
 
 **thinking about making each habit has its seperate file with the inputs in the form of date,data.**
