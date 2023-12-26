@@ -7,4 +7,6 @@ Habits  1) Studying     [      ] hours
         4) Sleeping     [      ] hours
         5) Eating       [      ] 
         [Add Button] [Remove Button] [Submit Button]
-then a graph that updates on page refresh to the right of it.        
+then a graph that updates on page refresh to the right of it.
+
+thinking about making each habit has its seperate file with the inputs in the form of date,data.
