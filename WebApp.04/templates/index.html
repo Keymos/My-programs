@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thrive todo app</title>
+</head>
+<body>
+	<h1>Hello Karim</h1>
+	<h3>habits list:</h3>
+	<ul>
+		{% for habit in habits %}
+			<li>{{ habit[0] }}</li>
+		{% endfor %}
+	</ul>
+	<h3>
+		Habits files list:
+		<ol>
+			{% for filename in habits_files %}
+				<li>{{ filename }}</li>
+			{% endfor %}
+		</ol>
+	</h3>
+	<p>{{ print_text }}</p>
+</body>
+</html>

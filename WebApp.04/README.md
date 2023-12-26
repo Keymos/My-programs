@@ -5,6 +5,7 @@
 
 ## Planned
 - The interface should look something like:
+- Habits:
 -         1) Studying     [      ] hours
 -         2) Working      [      ] hours
 -         3) Working out  [V OR -]
